@@ -64,3 +64,5 @@ git push -u origin main      (-u allows us to set the "upstream" of the branch w
 
 git push        (provided the upstream has been set, git push will do the same as git push origin main)
 
+
+Option 2: Starting from Scratch
