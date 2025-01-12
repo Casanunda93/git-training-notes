@@ -20,7 +20,9 @@ Option 1: If you already have an existing repo locally that you want to get on g
 
 Option 2: If you haven't begun work on your local repo - 1) Create a new repo on Github, 2) Clone it down to your machine, 3) Do some work locally, 4) Push up your changes to GitHub
 
-Option 1: If you already have an existing repo locally that you want to get on github - 1) Create a new repo on GitHub, 2) Connect your local repo (add a remote), 3) Push up your changes
+
+
+Option 1:
 
 ADDING A REMOTE
 
@@ -44,7 +46,21 @@ PUSHING
 
 Pushing is when we send work to GitHub (doesn't need to specifically be GitHub but you know what I mean). 
 
-git push <remote> <branch>       (we need to specify the remote (named location) we want to push to AND the specific local branch we want to push to that remote)
+git push <remote> <branch>       (we need to specify the remote (named location, SSH URL) we want to push to AND the specific local branch we want to push to that
+                                    remote, if the remote branch doesn't exist it is created and named the same as the local branch)
 
 example: git push origin main 
+
+While we often want to push a local branch up to a remote branch of the same name, we don't have to. 
+Example: Say we have a local branch called pancake, and rather than pushing it to a remote branch also called pancake suppose we want to send it to a remote branch called waffle
+
+git push origin pancake:waffle      (syntax: git push <remote> <local-branch>:<remote-branch>, not very common but useful to know, **usure if this will create a new
+                                        branch named waffle if one doesn't already exist, worth testing**)
+
+git push -u origin main      (-u allows us to set the "upstream" of the branch we're pushing. Think of this as a link connecting our local branch to a branch on 
+                                github. Running git push -u origin main sets the upstream of the local main branch so that it tracks the main branch on the origin repo)
+
+**Once the above command has been run, it allows us to run the following**
+
+git push        (provided the upstream has been set, git push will do the same as git push origin main)
 
