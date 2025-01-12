@@ -1,0 +1,63 @@
+git checkout is like a git swiss army knife. many devs think it is overloaded, which is what lead to the addition of the git switch (see branches) and git restore commands. We can use checkout to create branches, switch to new branches, restore files and undo history. 
+
+git checkout <commit hash> (use to view a previous commit. remember we can use git log to view commit hashes, we just need the first 7 digits of the hash)
+
+^^^^ This will generate the following message (Don't Panic)
+"You are in 'detached HEAD' state. You can look around, make experimental changes and commit them, and you can discard any commits you make in this state without impacting any branches by switching back to a branch"
+
+Normally HEAD points to a particular branch reference (Main, Bug-Fix etc) rather than a particular commit, and the branch reference points to the last commit made on a particular branch. So the usual case is HEAD ----> Branch -----> Most recent commit on the branch e.g. HEAD --->Main--->eaX34H. 
+When we checkout a commit, we are pointing HEAD to a specific commit hash rather than at the branch pointer, so the HEAD has become detached from the branch
+
+Things you can do witha Detached HEAD:
+1) stay in detached HEAD to examine the contents if the old commit, poke around, view files etc
+2) Leave and go back to wherever you were before i.e. reattach the HEAD
+3) create a new branch and switch to it. You can now make and save changes since the head is no longer attached. 
+
+you can also git checkout with specific reference to HEAD i.e.HEAD~1 refers to the commit before HEAD (parent) or HEAD~2 refers to the commit 2 commits before HEAD (grandparent)
+
+git checkout HEAD~1   (not essential to know but worth knowing, this can be used even when HEAD is detached)
+
+git switch -      (alternative way of switching back to previously used branch)
+
+
+
+DISCARDING CHANGES
+
+Suppose you've made some changes to a file but don't want to keep them. To revert back to whatever it looked like when you last committed you can use:
+
+git checkout HEAD <file>  or  git checkout -- <file>     (discard any changes in that file, reverting back to HEAD)
+
+Alternatively, suppose you've made some changes to a file since your last commit. You've saved the file but then realise you definitely do NOT want those changes anymore:
+
+git restore <file>    (restores the file to the contents in the HEAD, alternative to using git checkout again)
+
+git restore --source HEAD~2 <file>        (restores the file to the contents of a particular commit, could use a commit hash in place of HEAD~2, note: this does not time travel us, it just modifies the contents of the file, we are in the same position on the branch. using git restore <file> would put things back to the HEAD version)#
+
+UNSTAGING FILES
+
+if you have accidentally added a file to your staging area with git add and you don't wish to include it in the next commit:
+
+git restore --staged <file>    (this may be be particularly useful if using git add . when you accidentally add something you shouldn't)
+
+**For the two primary uses of git restore, git will prompt you that these are options when you run git status after modifying or adding a file**
+
+UNDOING COMMITS
+
+Suppose you've made a couple of commits on the main branch, but you actually meant to make them on a separate branch. To undo those commits:
+
+git reset <commit-Hash>    (will reset the repo back to a specific commit, the commits are gone but the changes associated with those commits will remain in the files, this is the regular reset and is particularly useful if you want to then recommit those changes on another branch)
+
+git reset --hard <commit-hash>    (will reset the repo back to a specific commit AND the actual changes in your files, this is the hard reset option BE CAREFUL)
+
+Alternatively, we can use "git revert". Similar to git reset in that they both undo chnages, but whereas git reset actually moves the branch pointer backwards, eliminating commits:
+
+git revert <commit-hash>      (creates a brand new commit which reverses/undoes the changes from a commit. This will prompt a commit message. REMEMBER unlike reset, the 
+                                commit hash you enter is the one you are undoing NOT the point you are undoing to, the commit you're referencing still exists but the
+                                 changes are removed)
+
+** Revert is preferable in collaborative situations, if other people have the bad commit of their machines then using reset can cause problems. if there are changes that only you have access to that you want to get rid of, the you can use reset worry free **
+
+
+
+
+

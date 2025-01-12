@@ -1,0 +1,19 @@
+Git Hub is a repo hosting website, the best known and most used place to store source code. Welcome to The Grid. 
+
+CLONING
+
+git clone <url>       (Git will retrieve all the files associated with the repo and will copy them to your local machine. It will also initialize a new repo on your
+                        machine, giving you access to the full git history of the cloned project. Because of this it is vital to not be in a repo when you clone,
+                        clone replaces git init in this circumstance. Anyone can clone any public repo, you do not need to be an owner or collaborator.)
+
+**You do not need to have an account to clone, just the HTML link**
+
+git clone works with any hosted repo, not just github based repos
+
+HOW DO I GET MY CODE ON GITHUB???
+
+Option 1: If you already have an existing repo locally that you want to get on github - 1) Create a new repo on GitHub, 2) Connect your local repo (add a remote), 3) Push up your changes
+
+Option 2: If you haven't begun work on your local repo - 1) Create a new repo on Github, 2) Clone it down to your machine, 3) Do some work locally, 4) Push up your changes to GitHub
+
+

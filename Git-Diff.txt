@@ -1,0 +1,60 @@
+git diff is used to view changes between commits, branches, files, working directory and more. Often used alongside commands like git status and git log to get a better pictures of a repo and how it has changed over time)
+
+git diff (without additional options, git diff lists all changes in our working directory that are NOT staged for the next commit)
+
+Reading outputs:
+We make a file called rainbow.txt
+
+Last Commit             New Changes
+red                     red
+orange                  orange
+yellow                  yellow
+green                   green
+blue                    blue
+purple                  indigo
+                        violet
+
+so running git diff will create:
+
+diff --git a/rainbow.txt b/rainbow.txt          << Compared files (usually 2 versions of the same file, designates one version as A, other as B)
+index 72d1d5a..f2c8117 100644               << File Metadata (Not important, 1st 2 numbers are the two files being compared, last number is an internal file identifier
+--- a/rainbow.txt                           << Symbol designation (Changes in file a will be designated by a minus sign, file b will be a plus sign)
++++ b/rainbow.txt
+@@ -3,4 +3,5 @@ orange                      << Chunks (a diff won't show the entire contents of a file, that's why you don't see "red" included, instead it only shows 
+yellow                                                portions or "chunks" that were modified. A chunk also includes some unchanged lines before and after a change to 
+green                                                 provide some context)
+blue 
+-purple
++indigo
++violet
+
+More Detail 
+diff --git a/rainbow.txt b/rainbow.txt          << Compared files (usually 2 versions of the same file, designates one version as A, other as B)
+index 72d1d5a..f2c8117 100644               << File Metadata (Not important, 1st 2 numbers are the two files being compared, last number is an internal file identifier
+--- a/rainbow.txt                           << Symbol designation (Changes in file a will be designated by a minus sign, file b will be a plus sign)
++++ b/rainbow.txt
+@@ -3,4 +3,5 @@ orange                      << Chunk Header (Each chunk starts witha chunk header found between the @ symbols, the numbers correspond to each file, so 
+yellow                                                      looking at the first 2 numbers we can say 4 lines (The number 4) have been extracted from file a    
+green                                                       (the minus symbol) starting at line 3 (the number 3) whereas the next 2 numbers are saying 5 lines (The      
+blue                                                        number 5) have been extracted from file b (the + symbol) starting at line 3 (The number 3)     
+-purple                                     << Changes (Every line that changed between the two files is marked with a - or +)
++indigo
++violet
+
+Using Git Diff in different ways
+
+git diff HEAD   (lists all changes in the working directory tree since your last commit i.e. Since HEAD)
+
+git diff --staged or git diff --cached (shows the changes between the staging area and our last commit "Show me what will be included if I commit right now")
+
+We can also Diff specific files:
+
+git diff HEAD "File name"  (lists all changes in the working directory tree since your last commit i.e. Since HEAD specifically in the specified file)
+git diff --staged "File Name" (shows the changes between the staging area and our last commit specifically in the specified file)
+
+We can also compare against different branches
+git diff branch1..branch2   (will list the changes between the tips of branch1 and branch2)
+
+We can also compare against specific commits
+git diff commit1..commit2  (will list the changes between two commits, have to provide git diff with the commit hashes, use git log --oneline to get the hashes)
+

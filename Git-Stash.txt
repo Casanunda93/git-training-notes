@@ -1,0 +1,27 @@
+Git Stash: example
+
+Say you have 2 branches, main and trial. You work on main to a point, then switch over to trial to test something out. 
+Then for whatever reason, you need to work on main, but the changes youve made over on trial aren't finished so you don't want to commit yet. 
+If you switched back to main at this point, you'd bring those changes with you. 
+Git stash provides an easy way of stashing these uncommitted changes so that we can return to them later, without having to make unnecessary commits. 
+you can even stash the changes after accidentally taking the changes over to main. 
+
+REMEMBER: Commits are the official history of a project, so unnecessary commits are not reccomended. 
+
+git stash or git stash save      (Takes all uncommitted changes, staged and unstaged, and stashes them, reverting the changes in your working copy)
+
+git stash pop      (removes the most recently stashed changes in your stash and re-applys them to your working copy)
+
+THOSE TWO ARE THE MOST COMMONLY USED ^^^^^^
+
+
+
+git stash apply    (applies whatever is in the stash without removing it, effectively does the same as pop but the stash remains for use elsewhere)
+
+git stash list     (You can stash multiple times, the changes will be saved in the order you stash them. to view the stashes, you use list)
+
+git stash apply stash@{#}    (applies a particular stash from the stash list using a stash ID)
+
+git stash drop stash@{#}      (deletes a particular stash from the stash list using a stash ID)
+
+git stash clear     (clears all stashes from the stash list)

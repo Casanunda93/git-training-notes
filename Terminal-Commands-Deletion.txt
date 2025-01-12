@@ -1,0 +1,6 @@
+Terminal Commands 
+Deleting Files and Folders
+
+rm (removes file permanently)
+
+rm -rf (removes a folder permanently)
