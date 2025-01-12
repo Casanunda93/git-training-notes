@@ -24,6 +24,8 @@ Scenario: you make a commit, but forget to git add a file that should be include
 
 git commit -a -m "My Message" (a one line way of committing all unstaged changed BE CAREFUL)
 
+git mv <old-file-name.txt> <new-file-name.txt>     (use to rename a file in a repo)
+
 
 
 
