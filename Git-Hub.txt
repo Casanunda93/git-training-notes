@@ -10,10 +10,26 @@ git clone <url>       (Git will retrieve all the files associated with the repo 
 
 git clone works with any hosted repo, not just github based repos
 
+
+
 HOW DO I GET MY CODE ON GITHUB???
 
 Option 1: If you already have an existing repo locally that you want to get on github - 1) Create a new repo on GitHub, 2) Connect your local repo (add a remote), 3) Push up your changes
 
 Option 2: If you haven't begun work on your local repo - 1) Create a new repo on Github, 2) Clone it down to your machine, 3) Do some work locally, 4) Push up your changes to GitHub
 
+Option 1: If you already have an existing repo locally that you want to get on github - 1) Create a new repo on GitHub, 2) Connect your local repo (add a remote), 3) Push up your changes
+
+ADDING A REMOTE
+
+Before we can push anything to GitHub, we need to tell Git about our remote repo on GitHub i.e. setting a destination to push to. 
+in Git, we refer to these "destinations" as remotes. Each remote is simply a URL where a hosted repo lives. 
+
+git remote or git remote -v     (Allows you to view any existing remotes for your repo, -v stands for verbose which gives you more info)
+
+git remote add <name> <URL>    (creates a named (typically "origin") remote for the URL of the GitHub repo)
+
+git remote rename <old-name> <new-name>       (changes remote name)
+
+git remote remove <name>      (removes remote)
 
