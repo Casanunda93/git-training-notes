@@ -47,7 +47,8 @@ PUSHING
 Pushing is when we send work to GitHub (doesn't need to specifically be GitHub but you know what I mean). 
 
 git push <remote> <branch>       (we need to specify the remote (named location, SSH URL) we want to push to AND the specific local branch we want to push to that
-                                    remote, if the remote branch doesn't exist it is created and named the same as the local branch)
+                                    remote, if the remote branch doesn't exist it is created and named the same as the local branch, you don't need to be on the branch
+                                    to push it)
 
 example: git push origin main 
 
