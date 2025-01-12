@@ -66,3 +66,13 @@ git push        (provided the upstream has been set, git push will do the same a
 
 
 Option 2: Starting from Scratch
+
+If you haven't begun work on your local repo, you can follow theses steps:
+1) Create a brand new repo on Github
+2) Clone it down to your machine
+3) Do some work locally
+4) Push up your changes to Github
+
+This workflow is useful as it automatically configures the remote
+
+
