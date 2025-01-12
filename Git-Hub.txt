@@ -33,3 +33,11 @@ git remote rename <old-name> <new-name>       (changes remote name)
 
 git remote remove <name>      (removes remote)
 
+
+PUSHING
+
+Pushing is when we send work to GitHub (doesn't need to specifically be GitHub but you know what I mean). 
+
+git push <remote> <branch>       (we need to specify the remote (named location) we want to push to AND the specific local branch we want to push to that remote)
+
+example: git push origin main 
