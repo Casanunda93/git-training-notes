@@ -4,4 +4,8 @@ A reference to the state of the branch on the remote version of the repo, pictur
 
 git branch -r       (view the remote branches our local repo knows about)
 
+Once you start adding new commits to the local repo, if you don't push those commits to github then the local repo will show you are ahead of origin/main by a certain number of commits. if you wanted to see what the repo looked like at origin/main, you could always go into a detached head state to have a look:
+
+git checkout origin/master     (view the state of the origin/main remote repo in detached HEAD state, see time-traveling.txt, git switch main to reattach head)
+
 
