@@ -26,3 +26,40 @@ If you clone down the repo, you would only be able to main, but runnint git bran
 if you then ran: git switch puppies, git creates the local branch puppies AND sets it up to track the remote branch origin/puppies
 
 ***IMPORTANT: in the above scenario, you do not need to use -c to create the branch, just git switch***
+
+Fetching and Pulling:
+
+Scenario:
+               
+GitHub   X---X---Y---Y---Y
+                    Uh Oh! the remote repo has changed! A teammate has pushed up changes to the master branch, but my local repo doesn't know
+                                    How do I get those chnages??
+Local    X---X---Z
+             |   |
+             |   Master
+        Origin/Master
+
+Visualising commands:
+
+
+           Git Add                Git Commit           Git Push
+           ------->                 ------->            ------>
+Workspace           Staging (Index)         Local Repo          Remote Repo
+                                                        <------
+                                                        Git fetch
+    <------------------------------------------------------------------
+                               Git pull
+
+In other words - Fetching allows us to download changes from a remote repo, BUT those changes will not be automatically integrated into our working files. 
+It lets you see what others have been working on, without having to merge those changes into your local repo. 
+Think of it as "please go and get the latest information from GitHub, but don't screw up my working directory"
+
+git fetch <remote>         (if not specified will default to origin, fetches branches and history from a specific remote repo. Only updates remote tracking
+                            branches. e.g. git fetch origin would fetch all changes from the origin remote repo)
+
+git fetch <remote> <branch>      (fetches a specific branch from a remote repo e.g. git fetch origin main would retrieve the latest info from the main branch on the
+                                    origin remote repo, as above it will only update the tracking branch)
+
+***IMPORTANT: git status only checks if the local repo is up to date with the origin repo AT THE POINT OF CLONING OR PREVIOUSLY FETCHED INFO***
+*** It is not Live, so git status may not always be an accurate representation of the remote repo***
+
