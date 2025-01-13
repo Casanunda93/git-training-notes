@@ -9,3 +9,20 @@ Once you start adding new commits to the local repo, if you don't push those com
 git checkout origin/master     (view the state of the origin/main remote repo in detached HEAD state, see time-traveling.txt, git switch main to reattach head)
 
 
+
+**IMPORTANT: when you clone, you only see the default branch locally**
+
+If a GitHub repo has multiple branches, we can see all of the remote branches using git branch -r as above
+If you wanted to just view what is on the other hosted branches you could use:
+
+git checkout origin/<remote-branch-name>       (this woud allow you to view files but only in detatched HEAD mode)
+
+HOWEVER this isn't great if you wanted to work on the files.
+
+This is where git switch comes in. If you run git switch <remote-branch-name>, git will create a new local branch from the remote branch of the same name.
+e.g say you have a GitHub repo with two branches, Main and puppies. 
+If you clone down the repo, you would only be able to main, but runnint git branch -r would show the puppies branch. 
+
+if you then ran: git switch puppies, git creates the local branch puppies AND sets it up to track the remote branch origin/puppies
+
+***IMPORTANT: in the above scenario, you do not need to use -c to create the branch, just git switch***

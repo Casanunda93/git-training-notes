@@ -11,7 +11,7 @@ git clone <url>       (Git will retrieve all the files associated with the repo 
 git clone works with any hosted repo, not just github based repos
 
 
-
+**IMPORTANT: when you clone, you only see the default branch locally, see fetching and pulling for more info**
 
 
 HOW DO I GET MY CODE ON GITHUB???
