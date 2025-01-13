@@ -1,0 +1,7 @@
+Remote Tracking Branch: Follows the pattern <remote>/<branch> e.g origin/master
+"At the time you last communicated with this remote repo, here is where x branch was pointing"
+A reference to the state of the branch on the remote version of the repo, picture a book mark pointing to the last known commit on the master branch of origin. 
+
+git branch -r       (view the remote branches our local repo knows about)
+
+
