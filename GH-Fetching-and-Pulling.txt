@@ -63,3 +63,16 @@ git fetch <remote> <branch>      (fetches a specific branch from a remote repo e
 ***IMPORTANT: git status only checks if the local repo is up to date with the origin repo AT THE POINT OF CLONING OR PREVIOUSLY FETCHED INFO***
 *** It is not Live, so git status may not always be an accurate representation of the remote repo***
 
+
+
+Git Pull is another command we can use to retrieve changes from a remote repo. Unlike fetch, pull actually updates our HEAD branch with whatever changes are retrieved from the remote i.e. "go and download data from GitHub AND immediately update my local repo with those changes", think of it as a combo of git fetch (update the remote tracking branch) and git merge (update my current branch with whatever changes are on the remote tracking branch)
+
+git pull <remote> <branch>     (we specify the particular remote and branch we want to pull. Just like with git merge, it matters WHERE we run this commnad from. 
+                                watever branch we run it from is where the changes will be merged into.)
+
+e.g git pull origin main       (fetches the latest info from the origin's main branch and merges those changes into the current branch)
+
+*** THIS WILL OFTEN RESULT IN A MERGE CONFLICT ***
+
+
+
