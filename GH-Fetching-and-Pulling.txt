@@ -19,11 +19,15 @@ git checkout origin/<remote-branch-name>       (this woud allow you to view file
 
 HOWEVER this isn't great if you wanted to work on the files.
 
-This is where git switch comes in. If you run git switch <remote-branch-name>, git will create a new local branch from the remote branch of the same name.
-e.g say you have a GitHub repo with two branches, Main and puppies. 
-If you clone down the repo, you would only be able to main, but runnint git branch -r would show the puppies branch. 
+This is where git switch comes in.
+ 
+git switch <remote-branch-name>        (git will create a new local branch from the remote branch of the same name. e.g say you have a GitHub repo with two branches,
+                                         Main and puppies. If you clone down the repo, you would only be able to main, but runnint git branch -r would show the puppies
+                                         branch.) 
 
-if you then ran: git switch puppies, git creates the local branch puppies AND sets it up to track the remote branch origin/puppies
+if you then ran: 
+
+git switch puppies                    (git creates the local branch puppies AND sets it up to track the remote branch origin/puppies)
 
 ***IMPORTANT: in the above scenario, you do not need to use -c to create the branch, just git switch***
 
@@ -44,7 +48,9 @@ Visualising commands:
 
            Git Add                Git Commit           Git Push
            ------->                 ------->            ------>
+
 Workspace           Staging (Index)         Local Repo          Remote Repo
+
                                                         <------
                                                         Git fetch
     <------------------------------------------------------------------
@@ -74,5 +80,10 @@ e.g git pull origin main       (fetches the latest info from the origin's main b
 
 *** THIS WILL OFTEN RESULT IN A MERGE CONFLICT ***
 
+*** BEFORE YOU PUSH TO GITHUB IT IS GOOD PRACTISE TO PULL DOWN FIRST TO MAKE SURE THERE'S NOT GOING TO BE ANY PROBLEMS IN THE REMOTE REPO***
+**Always resolve conflicts on local machine before pushing to github**
 
+git pull     (Often if we run git pull without specifying a particular remote or branch to pull from, git assumes the following: 1. remote will default to origin
+                2. Branch will default to whatever tracking connection is configured for your current branch. Note: this behavious can be configured and tracking
+                connections can be changed manually, however most people don't mess with that stuff)
 
