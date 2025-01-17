@@ -23,3 +23,11 @@ A README file is used to communicate important information about a repo includin
 
 If you put a README in the root of your project, Github will recognize it and automatically display it on the repo's home page. 
 READMEs are Markdown files, ending with the .md extension. Markdown is a convenient syntax to generate formatted text. 
+GitHub is able to render Markdown files as HTML based on the simple syntax. 
+For more information on how to use Markdown:
+https://markdown-it.github.io/
+https://daringfireball.net/projects/markdown/
+
+You could make a README locally and push it to the repo or on GitHub if you haven't made one on initialisation. 
+
+
