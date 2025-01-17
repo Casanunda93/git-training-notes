@@ -12,3 +12,14 @@ Only owner can remove collaborators.
 Collaborators are able to clone and push changes, but is still unable to view settings. 
 
 
+
+READMEs
+When you initialise a a repo on Github you have the option to create a readme.
+A README file is used to communicate important information about a repo including:
+-What the project does
+-How to run the project
+-Why it's noteworthy
+-Who maintains the project
+
+If you put a README in the root of your project, Github will recognize it and automatically display it on the repo's home page. 
+READMEs are Markdown files, ending with the .md extension. Markdown is a convenient syntax to generate formatted text. 
