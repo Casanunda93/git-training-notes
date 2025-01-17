@@ -1,4 +1,14 @@
 Public Vs Private Repos
 
+Option given when you create a repo on Github. 
+Public repos are accessible to everyone on the internet. anyone can see the repo on github. You still need permission too push. 
+Private repos are only accessible to the owner and people who have been granted access. 
+
+Only the owner can toggle the visibillity in the DANGER ZONE. 
+
+Adding Collaborators
+Can be manually invited on Github. Permission required on both ends. 
+Only owner can remove collaborators. 
+Collaborators are able to clone and push changes, but is still unable to view settings. 
 
 
