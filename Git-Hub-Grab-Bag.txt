@@ -31,3 +31,15 @@ https://daringfireball.net/projects/markdown/
 You could make a README locally and push it to the repo or on GitHub if you haven't made one on initialisation. 
 
 
+
+Github Gists
+Gists are a simple way to share code snippets and useful fragments with others. Gists are much easier to create, 
+but offer far fewer features than a typical Github repo.
+A lot of gists are also markdown files. 
+Can be made public or private. 
+Created using the add dropdown on Github. 
+
+
+
+
+
