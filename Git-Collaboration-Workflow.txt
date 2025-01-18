@@ -1,1 +1,12 @@
-Centralized Workflow
+Centralized Workflow: Everyone works on Main/Master i.e, the most basic workflow possible. 
+
+The simplest collaborative workflow is to have everyone work on the main branch. 
+It's straightforward and can work for tiny teams but it has quite a few shortcomings. 
+
+So every collaborator clones the remote repo, adds and commits, pulls other commits, deals with merge conflicts.
+This can be an issue if someone needs to commit broken code for discussion etc. 
+
+The Problem: While it's nice and easy to only work on the master branch, this leads to some serious issues with teams - Lots of time spent resolving conflicts and merging code, especially as team size scales up - No one can work on anything without disturbing the main codebase, how do you try adding someting radically differnt? How do you experiment? - The only way to collab on a feature together with another teammate is to push incomplete code to main. Other teammates now have broken code. 
+
+** NOT RECCOMENDED **
+
