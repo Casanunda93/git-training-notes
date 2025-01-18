@@ -34,5 +34,22 @@ They provide a mechanism to approve or reject the work on a given branch.
 They also help facilitate discussion and feedback on the specified commits. 
 "I have this new stuff I want to merge in to main, what do you all think about it"
 
+The workflow:
+1. Do some work locally on a feature branch
+2. Push up the feature branch to Github
+3. Open a pull request using the feature branch just pushed up to Github
+4. Wait for the PR to be approved and merged. Start a discussion on the PR (This part depends on the team structure)
+5. Other collaborators pull the newly merged main branch 
+
+Not all PR's can be merged without conflict.
+When this occurs, conflicts have to be resolved. 
+Github will give you the option to to view command line instructions
+This gives you the step by step terminal commands to view and fix the issue
+Once issues are fixed, merged and committed locally, they can be pushed to github
+
+Branch Protection Rules: Have to be manually configured, important to have main branch configured
+Prevents merging without PRs. 
+
+
 
 
