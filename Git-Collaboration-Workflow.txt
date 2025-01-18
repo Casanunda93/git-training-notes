@@ -28,3 +28,11 @@ At some point the work on feature braches will need to be merged into the main/m
 3. Pull Requests! (The correct answer)
 
 
+Pull Requests: a feature built in to products like Github & Bitbucket. THEY ARE NOT NATIVE TO GIT ITSELF. 
+They allow developers to alert team-members to new work that needs to be reviewed.
+They provide a mechanism to approve or reject the work on a given branch. 
+They also help facilitate discussion and feedback on the specified commits. 
+"I have this new stuff I want to merge in to main, what do you all think about it"
+
+
+
