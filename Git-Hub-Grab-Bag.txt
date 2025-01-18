@@ -31,7 +31,6 @@ https://daringfireball.net/projects/markdown/
 You could make a README locally and push it to the repo or on GitHub if you haven't made one on initialisation. 
 
 
-
 Github Gists
 Gists are a simple way to share code snippets and useful fragments with others. Gists are much easier to create, 
 but offer far fewer features than a typical Github repo.
@@ -40,6 +39,21 @@ Can be made public or private.
 Created using the add dropdown on Github. 
 
 
+GitHub Pages
+Github pages are public webpages that are hosted and published via Github. They allow you to create a website simply by pushing your code to Github.
+This is not a full fledged website. Can only host static webpages, so it does not support server-side code like Python, Ruby or Node. 
+Just HTML/CSS/JS but It's free and built in. Good for protfolios.
+2 kinds of site: User Site and Project sites
+User Sites: You get one user site per Github account. This is where you could host a portfolio site or some form of personal website. The default url is based on your Github username, following the patter "username.github.io" (though this is changeable)
+Project Sites: You get unlimited project sites! Each Github repo can have a corresponding hosted wedbsite. It's as simple as telling github which specific branch contains the web content. The default urls follow this pattern - username.github.io/repo-name
+
+Example
+    -make a "gh-pages" branch
+    -make a index.html file on the branch
+    -Settings > Github pages
+    -Select branch
+
+You can push any website changes to the branch. Will require HTML knowledge. 
 
 
 
