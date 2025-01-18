@@ -10,3 +10,21 @@ The Problem: While it's nice and easy to only work on the master branch, this le
 
 ** NOT RECCOMENDED **
 
+
+Feature Branch Workflow: Don't work on master silly goose!
+
+Rather that working directly on master/main, all new development should be done on seperate branches:
+- Treat master/main branch as the official project history
+- Multiple teammates can collab on a single feature and share code back and forth without polluting the master/main branch
+- master/main branch won't contain broken code (or at least it won't unless someone messes up)
+
+So every collaborator clones the remote repo, creates a new branch, works on the branch, pushes the branch up to git hub. That way if another person needs to collab, they can pull down that branch, do some work, push it back to git hub. No one has to stash their work etc. Once all the work is done, the branch can be merged into main and pushed up. Branches tend to be feature oriented. 
+
+Merging in feature branches
+
+At some point the work on feature braches will need to be merged into the main/master branch! There are a couple of options for how to do this. 
+1. Merge at will, without any sort of discussion with your teammates. JUST DO IT WHENEVER YOU WANT (Please no)
+2. Send an email or chat message or something to your team to discuss if the changes should be merged in. (ehhhhhhhh, not great but ok)
+3. Pull Requests! (The correct answer)
+
+
