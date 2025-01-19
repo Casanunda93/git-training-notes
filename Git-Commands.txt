@@ -8,7 +8,9 @@ git add "file name"(use git add to add specific files to the staging are. Sepera
 
 git add . (stages all changes at once
 
-git commit (actually commit changes from the staging area. When making a commit, we need to provide a commit message that summarizes the changes and work snapshotted in the commit. Think of it as adding a save point or check point in a video game) (When you run a straight commit command it will open up a text editor in order to add a commit message, this can be bypassed using the next command_
+git commit              (actually commit changes from the staging area. When making a commit, we need to provide a commit message that summarizes the changes and work
+                         snapshotted in the commit. Think of it as adding a save point or check point in a video game) (When you run a straight commit command it will
+                         open up a text editor in order to add a commit message, this can be bypassed using the next command)
 
 git commit -m "my message" (the -m flag allows us to pass in an inline commit message rather than launch a text editor, writing good commit messages is key)
 
