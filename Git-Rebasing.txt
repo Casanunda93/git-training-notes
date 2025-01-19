@@ -1,3 +1,53 @@
 Rebasing
 
+"It can mess things up" "It's not for beginners" "avoid at all costs" --- classic feelings towards rebasing. 
+HOWEVER It's actually very useful, as long as you know when NOT to use it. 
+Can be a very devisive command in the community. 
+
+There are two main ways to use the git rebase command:
+- as an alternative to merging
+- as a cleanup tool
+
+Say you have two people working on a repo. 
+Person one creates a feature branch and is plodding along. 
+Meanwhile person two works directly on main. 
+The following day, person one sees the main branch is 3 commits ahead of their feature branch. 
+In order to get this work, they would classically merge the main branch to feature creating merge commits. 
+This might happen many many times over the course of the feature branches life generating "needless" merge commits. 
+
+This all works, but can lead to a cluttered commit history. 
+We can instead rebase the feature branch onto the master branch. 
+This moves the entire feature branch so that it BEGINS at the tip of the master branch.
+All of the work is still there, but we have re-written history.
+
+So picking back up on the example, we've been merging in work from master onto our feature branch
+By rebasing, we recreate all the commits of feature but moved to the tip of the master branch (still on the feature branch)
+Essentially the most recent work on main is smooshed to the starting point of the commit chain on feature. 
+Both branches still exist, the feature branch will just be ahead of the master branch at this point
+
+So making sure you're on the feature branch (git switch feature):
+git rebase master           (rewrites the branch you are on so that the commits of master occur at the start of the commit chain for this branch)
+
+This will cleanup the commit history significantly (no more merge commits)
+
+So the previous example was a case of merging followed by a rebase, however rebasing can be used instead of merging completely.
+Rebasing always moves us to the tip of changes we pull over. 
+
+
+
+*** IMPORTANT: WHEN NOT TO REBASE ***
+
+Why rebase? We get a much cleaner project history with no unecessary merge commits thus creating a linear project history. 
+
+WARNING: Never rebase commits that have been shared with others. 
+If you have already pushed commits up to Github, DO NOT rebase them unless you are positive no one on the team is using those commits.
+
+SERIOUSLY: You do not want to rewrite any git history that other people already have. 
+it's a pain to reconcile the alternate histories. 
+
+You only rebase things on your machine that other people don't, so feature branches that you are working on etc. 
+YOU NEVER WANT TO REBASE THE MASTER/MAIN BRANCH. EVER. EVEN IF THERE'S A FIRE.
+
+*** IMPORTANT: READ THAT AGAIN. I MEAN IT. ***
+
 
