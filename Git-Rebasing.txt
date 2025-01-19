@@ -65,5 +65,33 @@ At this point you have 2 options:
 *Personally, I would prefer to merge for the majority, resolving conflicts as needed, then end on a rebase to tidy up.*
 
 
+Interactive Rebase: Cleaning Up History
+
+Sometimes we want to rewrite, delete, rename or even reorder commits (before sharing them). 
+We can do this using git rebase
+
+git rebase -i HEAD~4         (Running git rebase with the -i option will enter the interactive mode, which allows us to edit commits, add files, drop commits etc. 
+                              Note that we need to specify how far back we want to rewrite commits and that we are not rebasing onto another branch. Instead we are
+                              rebasing a series of commits onto the HEAD the are currently based on)
+
+Example:
+
+You have a repo on Github containing some awful commit messages, wrong tense, maybe commits you made in error. 
+You clone down locally. 
+Check the git log. 
+Make a feature branch. 
+run git rebase -i HEAD~However-many-commits-back
+It will open our text editor showing the commits you chose to edit with the following commands on the left
+    -pick (use the commit as is)
+    -reword (use the commit, but edit the commit message)
+    -edit (use commit but sto for amending)
+    -fixup (use commit contents but meld it into the previous commit and discard the commit message)
+    -drop (remove commit, contents included)
+    - (There are more but those are the most common)
+Choose the relevant command, save and close the text editor
+A new text editor window will open if you selected an option requiring it, again make changes, save, close
+Rebase will finish with changes in place. 
+
+
 
 
