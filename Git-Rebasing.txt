@@ -93,5 +93,13 @@ A new text editor window will open if you selected an option requiring it, again
 Rebase will finish with changes in place. 
 
 
+*Note: Once I am finished making these notes I can get around the BIG rebasing issue by doing the following
+-Make a new local branch
+-Rebase, make necessary commit changes
+-Push to GitHub
+-Make the new branch the default
+-rename the new branch as main, old branch as main 2
+-delete old main branch 
 
+I AM ONLY ABLE TO DO THIS BECAUSE I HAVE CONTROL OF BOTH LOCAL AND REMOTE REPOS
 
