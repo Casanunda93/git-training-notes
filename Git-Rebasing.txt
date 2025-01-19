@@ -51,3 +51,19 @@ YOU NEVER WANT TO REBASE THE MASTER/MAIN BRANCH. EVER. EVEN IF THERE'S A FIRE.
 *** IMPORTANT: READ THAT AGAIN. I MEAN IT. ***
 
 
+
+Rebasing and conflicts
+
+When conflicts occure while rebasing it will create a partial rebase up to the point of the conflict i.e. some commits will get re-written but the process isn't finished.
+At this point you have 2 options:
+
+1) run "git rebase --abort" to go back to before you tried to rebase
+2) resolve the conflict in the same way we do when merging, 
+   then mark them as resolved by adding the conflicting file (git add <conflicting-file>), DON'T COMMIT,
+   then run "git rebase --continue"
+
+*Personally, I would prefer to merge for the majority, resolving conflicts as needed, then end on a rebase to tidy up.*
+
+
+
+
