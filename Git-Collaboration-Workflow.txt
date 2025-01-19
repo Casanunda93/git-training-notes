@@ -51,5 +51,26 @@ Branch Protection Rules: Have to be manually configured, important to have main 
 Prevents merging without PRs. 
 
 
+Fork and Clone Workflow: Different from previous examples. Instead of just one centralised GitHub repo, every developer has their own GitHub repo in addition to the "main" repo. Developers make changes and push to their own forks before making a pull request. It's very commonly used on large open-source projects where there may be thousands of contributors with only a couple maintainers. 
+
+Forking: GitHub and similar tools allow us to create personal copies of other peoples' repos on our Github account. We call those copies a "fork" of the original. 
+When we fork a repo, we're basically asking Github "Make me my own copy of this repo please"
+As with pull requests, forking is not a Git feature. The ability to fork is implemented by Github. 
+You can then clone the repo to a local machine, work on it, push it back to my fork and not hit any restriction. 
+At that point you can then raise a pull request for the original repo
+
+**NOTE: In order for your local repo to stay up to date with the original master project, you have to create a second remote linked to that repo for pulling the latest infor down, conventionally called "upstream"**
+
+Summary of Steps:
+1. Fork the project to Github account
+2. Clone the fork to local machine
+3. Add upstream remote to the original repo
+4. Do some work locally
+5. Push to origin (the fork repo)
+6. Open a pull request for the original project
+
+The Fork and clone workflow might seem complicated but it is extremely common for good reason. It allows a project maintainer to accept contributions from developers all around the world without having to ass them as actual owners of the main project repo or worry about giving them all permission to push to that repo. 
+
+The correct workflow will always be situational. 
 
 
