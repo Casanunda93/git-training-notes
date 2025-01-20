@@ -35,3 +35,11 @@ The new functionallity is optional and should not forces the users to rewrite th
 
 Major releases signify significant changes that are no longer backwards compatible. 
 Features may be removed or changed substantially: v2.0.0
+
+
+
+Viewing tags
+
+git tag      (will list all tags in the current repo)
+
+
