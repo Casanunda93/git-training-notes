@@ -87,3 +87,8 @@ git tag -f <tagname>         (Forces our tag through, essentially moves the tag 
 
 
 
+Deleting tags
+
+git tag -d <tagname>      (deletes the specified tag, just the tag not the commit)
+
+
