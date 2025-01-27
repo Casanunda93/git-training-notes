@@ -42,4 +42,14 @@ Viewing tags
 
 git tag      (will list all tags in the current repo)
 
+git tag -l "*beta*"    (we can search for tags that match a particular pattern by using git tag -l and then passing a wildcard pattern e.g. "*beta*" will print a list
+                        of tags that include "beta" in the name - the * just means some characters before and after the word beta)
+
+
+Checking out tags
+
+git chackout <tag>     (To view the state of a repo at a particular tag, this puts us in detatched HEAD. If we wanted to work from this past tag, we could create a
+                        branch from this point) 
+
+
 
