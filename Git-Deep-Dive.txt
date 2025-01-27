@@ -1,1 +1,32 @@
-None of this is particularly necessary to know 
+None of this is particularly necessary to know but these are some attributes of the .git folder (the hidden folder of any repo)
+
+
+
+The local config file
+
+The config file is for configuration (duh). We've seen how to configure global settings like our name and email across all Git repos, but we can also configure things on a per-repo basis. 
+
+git config --local      (We can make changes to this file via command line as we have done before or we can open this file and make changes directly to it.) 
+
+
+
+The refs directory (references)
+
+Inside refs, you'll find a heads directory. refs/heads contains one file per branch in a repo. Each file is named after a branch and contains the has of the commit at the tip of the branch e.g. refs/heads/master contains the commit hash of the last commit on the master branch. Refs also contains a refs/tags folder which contains one file for each tag in the repo. 
+
+
+
+The HEAD file
+
+HEAD is just a text file that keeps track of where HEAD points. 
+If it contains refs/heads/master, this means that HEAD is pointing to the master branch. 
+In detatched HEAD, the HEAD file contains a commit hash instead of a branch reference. 
+
+
+The objects directory
+
+The objects directory contains all the repo files.
+This is where Git stores the backups of files, the commits in a repo and more. 
+The files are all compressed and encrypted, so they won't look like much. 
+
+
