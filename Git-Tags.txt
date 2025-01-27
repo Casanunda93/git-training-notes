@@ -52,4 +52,12 @@ git chackout <tag>     (To view the state of a repo at a particular tag, this pu
                         branch from this point) 
 
 
+Comparing Tags
+
+git diff <tag1> <tag2>     (compares the repo at each tag, see git diff sheet)
+
+
+
+
+
 
