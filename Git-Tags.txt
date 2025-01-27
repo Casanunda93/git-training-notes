@@ -79,3 +79,11 @@ git tag -a <tagname> <commit-hash>        (creates and annotated tag for a artic
 
 
 
+Forcing Tags
+
+If you try and reuse a tag that is already associated with a commit, Git will get sad and throw a wobbler. 
+
+git tag -f <tagname>         (Forces our tag through, essentially moves the tag from the old commit it was pointing at to the new one, in this case default HEAD)
+
+
+
