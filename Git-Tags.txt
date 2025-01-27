@@ -92,3 +92,15 @@ Deleting tags
 git tag -d <tagname>      (deletes the specified tag, just the tag not the commit)
 
 
+
+Pushing Tags
+
+by default, the git push command doesn't transfer tags to remote servers. If you have a lot of tags you want to push up at once, you can use the --tags option with git push. This will transfer all of your tags to the remote server that are not already there. 
+
+i.e. git push --tags
+
+or if you have individual tags you want to push:
+
+git push origin <tagname>        (pushes the specified tag to the remote origin)
+
+
