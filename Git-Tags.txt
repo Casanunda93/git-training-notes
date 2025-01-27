@@ -73,5 +73,9 @@ git show <tagname>       (Used to view the meta data of an annotated tag)
 
 
 
+Tagging previous commits
+
+git tag -a <tagname> <commit-hash>        (creates and annotated tag for a articular commit, not the default)
+
 
 
