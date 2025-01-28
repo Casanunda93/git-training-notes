@@ -1,7 +1,0 @@
-Terminal Commands 
-Creating Files and Folders
-
-touch (create a file i.e. touch adam.txt)
-
-mkdir (create a new folder)
-
