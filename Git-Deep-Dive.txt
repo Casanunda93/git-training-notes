@@ -79,3 +79,34 @@ echo 'hello' | git hash-object --stdin -w     (Rather than simply outputting the
 git cat-file -p <object-hash>        (retrieving the data stored in out git object database, the -p tells git to pretty print the contents of the object based on its
                                         type)
 
+
+
+Deep Dive: Blobs
+
+Git blobs (binary large object) are the object type git uses to store the contents of files in a given repo. 
+Blobs don't even include the filenames of each file or any other data. 
+They just store the contents of a file. 
+Each blob gets its own hash. 
+
+
+Deep Dive: Trees
+
+Trees are Git objects used to store the contents of a directory. 
+Each tree contains pointers that can refer to blobs and to other trees. 
+Each entry in a tree contains the SHA-1 hash of a blob or tree, as well as the mode, type and filename
+Each tree gets its own hash
+
+git cat-file -p main^{tree}       (remember that git cat-file prints out git objects. in this example, the main^{tree} syntax specifies the tree object that is
+                                        pointed to by the tip of our main branch)
+
+git cat-file -t <object-hash>     (tells you the kind of object associated with a particular hash i.e. blobs, trees etc)
+
+
+Deep Dive: Commits
+
+Commit objects combine a tree object along with information about the context that led to the current tree. 
+Commits store a reference to parent commits, the author, the committer and the commit message. 
+When we run git commit, git creates a new commit object whose parent is the current HEAD commit and whose tree is the current content of the index. 
+So commits contain the hash of the tree, tree contains the hash of the blobs, blobs contain the contents
+
+
