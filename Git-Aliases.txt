@@ -7,3 +7,21 @@ We can also alter config variables from the command line.
 cat ~/.gitconfig           (prints contents of the global config file)
 
 
+
+Adding aliases - custom commands
+
+We can easily set up Git aliases to make our Git experience a bit simpler and faster. 
+For example we could define an alias "git ci" instead of having to type "git commit"
+Or we could define a custom git lg command that prints out a custom formatted commit log.
+
+[alias]
+    s = status                      (custom command "git s" which will run git status)
+    l = log                         (custom command "git l" which will run git log)
+
+You just add the aliases you want to the config file. 
+You can also do it via command line:
+
+git config --global alias.Br branch      (custom command "git Br" which will run git branch)
+
+
+
