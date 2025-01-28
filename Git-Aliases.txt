@@ -1,1 +1,9 @@
 The Global Config File
+
+Git looks for the global config file at either ~/.gitconfig or ~/.config/git/config
+Any configuration variables that we change in the file will be applied across all Git repos. 
+We can also alter config variables from the command line. 
+
+cat ~/.gitconfig           (prints contents of the global config file)
+
+
