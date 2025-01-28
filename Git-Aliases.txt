@@ -24,4 +24,14 @@ You can also do it via command line:
 git config --global alias.Br branch      (custom command "git Br" which will run git branch)
 
 
+Aliases with Arguments
+Arguments are automatically passed through when you defin an alias.
 
+Example:
+
+[alias]
+    cm = commit -m                        (custom command "git cm" which will run git commit -m)
+
+If you then run:
+    git cm "Message"
+The message will be passed through and added to the alias, meaning the message will work. 
