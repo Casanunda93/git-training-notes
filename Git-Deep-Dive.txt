@@ -54,5 +54,28 @@ Git uses a hashing function called SHA-1 (though this is set to change eventuall
 
 
 
+Git Database
 
+Git is a key-value data store. We can insert any kind of content into a Git repo, and Git will hand us back a unique key we can use later to retrieve that content. 
+These keys that we get back are SHA-1 checksums. 
+
+
+Hashing with Git Hash-Object
+
+The command git hash-object takes some data, stores in our .git/objects directory and gives us back a unique SHA-1 hash that refers to that data object. 
+
+git hash-object <file>      (In the simplest form, Git simply takes some content and returns the unique ket that WOULD be used to store our object. But it doesn't
+                             actually store anything.) 
+
+echo 'hello' | git hash-object --stdin        (The --stdin option tells git hash-object to use the content from standard input rather than a file. In our example it will
+                                                hash the word 'hello'. The echo command simply repeats whatever we tell it to repeat to the terminal. We pipe ( | ) the
+                                                output of echo to git hash-object, this command does not store the ooutput anywhere)
+
+echo 'hello' | git hash-object --stdin -w     (Rather than simply outputting the key that git would store our object under, we can use -w to tell git to actually write
+                                                the object to the database. After running this command the key should be written to the .git/objects directory, the first
+                                                2 characters of the 40 hex code will be the name of the newly made directory, the file name will be the other 38
+                                                characters)
+
+git cat-file -p <object-hash>        (retrieving the data stored in out git object database, the -p tells git to pretty print the contents of the object based on its
+                                        type)
 
