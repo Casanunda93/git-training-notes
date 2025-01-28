@@ -34,4 +34,16 @@ Example:
 
 If you then run:
     git cm "Message"
-The message will be passed through and added to the alias, meaning the message will work. 
+The message will be passed through and added to the alias, meaning the message will work.
+
+
+***WARNING: Aliases are personal, you can become accustomed to them. This can be an issue if you become too reliant ***
+
+
+Alias resources:
+
+https://gist.github.com/mwhite/6887990
+
+https://www.durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+
+https://github.com/GitAlias/gitalias
