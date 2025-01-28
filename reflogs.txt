@@ -11,3 +11,38 @@ git reflog       (git reflog accepts subcommands show, expire, delete and exists
 git reflog show HEAD     (git reflog show will show the log of a specific reference, defaults to HEAD)
 
 example: to view the logs for the tip of the main branch we could run: git reflog show main 
+
+
+
+Reflog References
+
+name@{qualifier}           (We can use this syntax to access specific ref pointers and can pass them to other command including checkout, reset and merge)
+
+e.g. git reflog show HEAD@{10}        (Shows everything logged up until Head@{10})
+
+git checkout HEAD@{2}         (Detatches Head to 2 moves ago, not to be confused with HEAD~2 which is 2 commits ago)
+
+git diff HEAD@{0} HEAD@{5}        (what has changed between Head now and Head 5 moves ago)
+
+
+
+Timed References
+
+Every entry in the references logs has a timestamp associated with it. 
+We can filter reflog entries by time/date by using time qualifiers like:
+- 1.day.ago
+- 3.minutes.ago
+- yesterday
+- Fri, 12 Feb 2021 14:06:21 -08:00
+
+e.g. git reflog show main@{1.day.ago}       (filters the reflog up until 1 day ago)
+
+git diff main main@{yesterday}          (compares main now against main yesterday)
+
+git checkout main@{1.week.ago}          (detatches head to the closest matching reflog timestamp to one week ago)
+
+
+
+
+
+
