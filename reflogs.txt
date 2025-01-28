@@ -43,6 +43,20 @@ git checkout main@{1.week.ago}          (detatches head to the closest matching 
 
 
 
+Reflogs to the Rescue
+
+We can sometimes use reflog entries to access commits that seem lost and are not appearing in git log. 
+
+Example: Say we perform a commit in error, so we run a hard reset (see time travelling) to remove that commit.
+The removed commit is still in the reflog for the branch. 
+So if we wanted it back we could the perform another reset based on the commit hash or a timed reference or even a ref pointer
+
+git reset --hard main@{1}     (hard resets main to one step ago based on the reflog)
+
+Use of reflogs are a great way of fixing things if you rebased in error 
+
+
+
 
 
 
