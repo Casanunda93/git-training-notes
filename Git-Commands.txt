@@ -1,32 +1,29 @@
 Git Commands
 
-git status (gives the current status of a git repo and its contents)
+git status                      (gives the current status of a git repo and its contents)
+git init                        (initialise a new repository in whatever directory we are in, to be done once per project in the top level folder containing the project,
+                                 NEVER RUN GIT INIT MORE THAN ONCE)
 
-git init (initialise a new repository in whatever directory we are in, to be done once per project in the top level folder containing the project, NEVER RUN GIT INIT MORE THAN ONCE)
+git add "file name"             (use git add to add specific files to the staging are. Seperate files with spaces to add multiple at once.)
+git add .                       (stages all changes at once)
 
-git add "file name"(use git add to add specific files to the staging are. Seperate files with spaces to add multiple at once.)
+git commit                      (actually commit changes from the staging area. When making a commit, we need to provide a commit message that summarizes the changes and
+                                 work snapshotted in the commit. Think of it as adding a save point or check point in a video game) (When you run a straight commit 
+                                 command it will open up a text editor in order to add a commit message, this can be bypassed using the next command)
+git commit -m "my message"      (the -m flag allows us to pass in an inline commit message rather than launch a text editor, writing good commit messages is key)
 
-git add . (stages all changes at once
+git log                         (spits out a log of all commits for a given repository)
+git log --oneline               (shows log of all commits in a single line per commit)
 
-git commit              (actually commit changes from the staging area. When making a commit, we need to provide a commit message that summarizes the changes and work
-                         snapshotted in the commit. Think of it as adding a save point or check point in a video game) (When you run a straight commit command it will
-                         open up a text editor in order to add a commit message, this can be bypassed using the next command)
-
-git commit -m "my message" (the -m flag allows us to pass in an inline commit message rather than launch a text editor, writing good commit messages is key)
-
-git log (spits out a log of all commits for a given repository)
-
-git log --oneline (shows log of all commits in a single line per commit)
-
-git commit --amend (update the most recent commit)
+git commit --amend              (update the most recent commit)
 Scenario: you make a commit, but forget to git add a file that should be included
             git commit -m "Make chapter 5"
             git add chapter5.txt
             git commit --amend
 
-git commit -am "My Message" (a one line way of committing all unstaged changed BE CAREFUL)
+git commit -am "My Message"     (a one line way of committing all unstaged changed BE CAREFUL)
 
-git mv <old-file-name.txt> <new-file-name.txt>     (use to rename a file in a repo)
+git mv <old-file-name.txt> <new-file-name.txt>          (use to rename a file in a repo)
 
 
 

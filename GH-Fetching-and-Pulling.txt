@@ -2,34 +2,40 @@ Remote Tracking Branch: Follows the pattern <remote>/<branch> e.g origin/master
 "At the time you last communicated with this remote repo, here is where x branch was pointing"
 A reference to the state of the branch on the remote version of the repo, picture a book mark pointing to the last known commit on the master branch of origin. 
 
-git branch -r       (view the remote branches our local repo knows about)
+git branch -r                                   (view the remote branches our local repo knows about)
 
-Once you start adding new commits to the local repo, if you don't push those commits to github then the local repo will show you are ahead of origin/main by a certain number of commits. if you wanted to see what the repo looked like at origin/main, you could always go into a detached head state to have a look:
+Once you start adding new commits to the local repo, if you don't push those commits to github then the local repo will show you are ahead of origin/main by a certain number of commits. 
+If you wanted to see what the repo looked like at origin/main, you could always go into a detached head state to have a look:
 
-git checkout origin/master     (view the state of the origin/main remote repo in detached HEAD state, see time-traveling.txt, git switch main to reattach head)
-
+git checkout origin/master                      (view the state of the origin/main remote repo in detached HEAD state, see time-traveling.txt, git switch main to
+                                                 reattach head)
 
 
 **IMPORTANT: when you clone, you only see the default branch locally**
 
+
 If a GitHub repo has multiple branches, we can see all of the remote branches using git branch -r as above
 If you wanted to just view what is on the other hosted branches you could use:
 
-git checkout origin/<remote-branch-name>       (this woud allow you to view files but only in detatched HEAD mode)
+git checkout origin/<remote-branch-name>       (This woud allow you to view files but only in detatched HEAD mode)
+
 
 HOWEVER this isn't great if you wanted to work on the files.
 
+
 This is where git switch comes in.
  
-git switch <remote-branch-name>        (git will create a new local branch from the remote branch of the same name. e.g say you have a GitHub repo with two branches,
-                                         Main and puppies. If you clone down the repo, you would only be able to main, but runnint git branch -r would show the puppies
-                                         branch.) 
+git switch <remote-branch-name>                (git will create a new local branch from the remote branch of the same name. e.g say you have a GitHub repo with two
+                                                branches, Main and puppies. If you clone down the repo, you would only be able to main, but runnint git branch -r would
+                                                show the puppies branch.) 
 
 if you then ran: 
 
-git switch puppies                    (git creates the local branch puppies AND sets it up to track the remote branch origin/puppies)
+git switch puppies                             (git creates the local branch puppies AND sets it up to track the remote branch origin/puppies)
 
 ***IMPORTANT: in the above scenario, you do not need to use -c to create the branch, just git switch***
+
+
 
 Fetching and Pulling:
 
@@ -60,11 +66,11 @@ In other words - Fetching allows us to download changes from a remote repo, BUT 
 It lets you see what others have been working on, without having to merge those changes into your local repo. 
 Think of it as "please go and get the latest information from GitHub, but don't screw up my working directory"
 
-git fetch <remote>         (if not specified will default to origin, fetches branches and history from a specific remote repo. Only updates remote tracking
-                            branches. e.g. git fetch origin would fetch all changes from the origin remote repo)
+git fetch <remote>                  (if not specified will default to origin, fetches branches and history from a specific remote repo. Only updates remote tracking
+                                     branches. e.g. git fetch origin would fetch all changes from the origin remote repo)
 
-git fetch <remote> <branch>      (fetches a specific branch from a remote repo e.g. git fetch origin main would retrieve the latest info from the main branch on the
-                                    origin remote repo, as above it will only update the tracking branch)
+git fetch <remote> <branch>         (fetches a specific branch from a remote repo e.g. git fetch origin main would retrieve the latest info from the main branch on the
+                                     origin remote repo, as above it will only update the tracking branch)
 
 ***IMPORTANT: git status only checks if the local repo is up to date with the origin repo AT THE POINT OF CLONING OR PREVIOUSLY FETCHED INFO***
 *** It is not Live, so git status may not always be an accurate representation of the remote repo***
@@ -73,17 +79,20 @@ git fetch <remote> <branch>      (fetches a specific branch from a remote repo e
 
 Git Pull is another command we can use to retrieve changes from a remote repo. Unlike fetch, pull actually updates our HEAD branch with whatever changes are retrieved from the remote i.e. "go and download data from GitHub AND immediately update my local repo with those changes", think of it as a combo of git fetch (update the remote tracking branch) and git merge (update my current branch with whatever changes are on the remote tracking branch)
 
-git pull <remote> <branch>     (we specify the particular remote and branch we want to pull. Just like with git merge, it matters WHERE we run this commnad from. 
-                                watever branch we run it from is where the changes will be merged into.)
+git pull <remote> <branch>          (we specify the particular remote and branch we want to pull. Just like with git merge, it matters WHERE we run this commnad from. 
+                                     whatever branch we run it from is where the changes will be merged into.)
 
-e.g git pull origin main       (fetches the latest info from the origin's main branch and merges those changes into the current branch)
+e.g git pull origin main            (fetches the latest info from the origin's main branch and merges those changes into the current branch)
+
 
 *** THIS WILL OFTEN RESULT IN A MERGE CONFLICT ***
+
 
 *** BEFORE YOU PUSH TO GITHUB IT IS GOOD PRACTISE TO PULL DOWN FIRST TO MAKE SURE THERE'S NOT GOING TO BE ANY PROBLEMS IN THE REMOTE REPO***
 **Always resolve conflicts on local machine before pushing to github**
 
-git pull     (Often if we run git pull without specifying a particular remote or branch to pull from, git assumes the following: 1. remote will default to origin
-                2. Branch will default to whatever tracking connection is configured for your current branch. Note: this behavious can be configured and tracking
-                connections can be changed manually, however most people don't mess with that stuff)
+
+git pull                            (Often if we run git pull without specifying a particular remote or branch to pull from, git assumes the following: 1. remote will
+                                     default to origin 2. Branch will default to whatever tracking connection is configured for your current branch. Note: this behavious
+                                     can be configured and tracking connections can be changed manually, however most people don't mess with that stuff)
 

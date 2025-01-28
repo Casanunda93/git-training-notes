@@ -4,7 +4,7 @@ Git looks for the global config file at either ~/.gitconfig or ~/.config/git/con
 Any configuration variables that we change in the file will be applied across all Git repos. 
 We can also alter config variables from the command line. 
 
-cat ~/.gitconfig           (prints contents of the global config file)
+cat ~/.gitconfig                            (prints contents of the global config file)
 
 
 
@@ -15,13 +15,14 @@ For example we could define an alias "git ci" instead of having to type "git com
 Or we could define a custom git lg command that prints out a custom formatted commit log.
 
 [alias]
-    s = status                      (custom command "git s" which will run git status)
-    l = log                         (custom command "git l" which will run git log)
+    s = status                              (custom command "git s" which will run git status)
+    l = log                                 (custom command "git l" which will run git log)
 
 You just add the aliases you want to the config file. 
 You can also do it via command line:
 
-git config --global alias.Br branch      (custom command "git Br" which will run git branch)
+git config --global alias.Br branch         (custom command "git Br" which will run git branch)
+
 
 
 Aliases with Arguments
@@ -30,7 +31,7 @@ Arguments are automatically passed through when you defin an alias.
 Example:
 
 [alias]
-    cm = commit -m                        (custom command "git cm" which will run git commit -m)
+    cm = commit -m                          (custom command "git cm" which will run git commit -m)
 
 If you then run:
     git cm "Message"
@@ -43,7 +44,5 @@ The message will be passed through and added to the alias, meaning the message w
 Alias resources:
 
 https://gist.github.com/mwhite/6887990
-
 https://www.durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
-
 https://github.com/GitAlias/gitalias

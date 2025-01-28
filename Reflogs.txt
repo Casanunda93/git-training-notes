@@ -6,9 +6,10 @@ We can view and update these reference logs using the git reflog command.
 *** Limitations: Git only keeps reflogs on your local activity. They are not shared with collaborators. 
 Reflogs also expire. Git cleans out old entries after around 90 days, though this can be configured. ***
 
-git reflog       (git reflog accepts subcommands show, expire, delete and exists. Show is the only commonly used variant and is the default subcommand)
 
-git reflog show HEAD     (git reflog show will show the log of a specific reference, defaults to HEAD)
+git reflog                              (git reflog accepts subcommands show, expire, delete and exists. Show is the only commonly used variant and is the default
+                                         subcommand)
+git reflog show HEAD                    (git reflog show will show the log of a specific reference, defaults to HEAD)
 
 example: to view the logs for the tip of the main branch we could run: git reflog show main 
 
@@ -16,13 +17,10 @@ example: to view the logs for the tip of the main branch we could run: git reflo
 
 Reflog References
 
-name@{qualifier}           (We can use this syntax to access specific ref pointers and can pass them to other command including checkout, reset and merge)
-
-e.g. git reflog show HEAD@{10}        (Shows everything logged up until Head@{10})
-
-git checkout HEAD@{2}         (Detatches Head to 2 moves ago, not to be confused with HEAD~2 which is 2 commits ago)
-
-git diff HEAD@{0} HEAD@{5}        (what has changed between Head now and Head 5 moves ago)
+name@{qualifier}                        (We can use this syntax to access specific ref pointers and can pass them to other command including checkout, reset and merge)
+e.g. git reflog show HEAD@{10}          (Shows everything logged up until Head@{10})
+git checkout HEAD@{2}                   (Detatches Head to 2 moves ago, not to be confused with HEAD~2 which is 2 commits ago)
+git diff HEAD@{0} HEAD@{5}              (what has changed between Head now and Head 5 moves ago)
 
 
 
@@ -36,10 +34,8 @@ We can filter reflog entries by time/date by using time qualifiers like:
 - Fri, 12 Feb 2021 14:06:21 -08:00
 
 e.g. git reflog show main@{1.day.ago}       (filters the reflog up until 1 day ago)
-
-git diff main main@{yesterday}          (compares main now against main yesterday)
-
-git checkout main@{1.week.ago}          (detatches head to the closest matching reflog timestamp to one week ago)
+git diff main main@{yesterday}              (compares main now against main yesterday)
+git checkout main@{1.week.ago}              (detatches head to the closest matching reflog timestamp to one week ago)
 
 
 
@@ -51,9 +47,9 @@ Example: Say we perform a commit in error, so we run a hard reset (see time trav
 The removed commit is still in the reflog for the branch. 
 So if we wanted it back we could the perform another reset based on the commit hash or a timed reference or even a ref pointer
 
-git reset --hard main@{1}     (hard resets main to one step ago based on the reflog)
+git reset --hard main@{1}                   (hard resets main to one step ago based on the reflog)
 
-Use of reflogs are a great way of fixing things if you rebased in error 
+***Use of reflogs are a great way of fixing things if you rebased in error***
 
 
 

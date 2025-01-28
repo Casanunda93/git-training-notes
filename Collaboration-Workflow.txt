@@ -6,7 +6,8 @@ It's straightforward and can work for tiny teams but it has quite a few shortcom
 So every collaborator clones the remote repo, adds and commits, pulls other commits, deals with merge conflicts.
 This can be an issue if someone needs to commit broken code for discussion etc. 
 
-The Problem: While it's nice and easy to only work on the master branch, this leads to some serious issues with teams - Lots of time spent resolving conflicts and merging code, especially as team size scales up - No one can work on anything without disturbing the main codebase, how do you try adding someting radically differnt? How do you experiment? - The only way to collab on a feature together with another teammate is to push incomplete code to main. Other teammates now have broken code. 
+The Problem: While it's nice and easy to only work on the master branch, this leads to some serious issues with teams - Lots of time spent resolving conflicts and merging code, especially as team size scales up - No one can work on anything without disturbing the main codebase, how do you try adding someting radically differnt? How do you experiment? - The only way to collab on a feature together with another teammate is to push incomplete code to main. 
+Other teammates now have broken code. 
 
 ** NOT RECCOMENDED **
 
@@ -18,7 +19,9 @@ Rather that working directly on master/main, all new development should be done 
 - Multiple teammates can collab on a single feature and share code back and forth without polluting the master/main branch
 - master/main branch won't contain broken code (or at least it won't unless someone messes up)
 
-So every collaborator clones the remote repo, creates a new branch, works on the branch, pushes the branch up to git hub. That way if another person needs to collab, they can pull down that branch, do some work, push it back to git hub. No one has to stash their work etc. Once all the work is done, the branch can be merged into main and pushed up. Branches tend to be feature oriented. 
+So every collaborator clones the remote repo, creates a new branch, works on the branch, pushes the branch up to git hub. 
+That way if another person needs to collab, they can pull down that branch, do some work, push it back to git hub. 
+No one has to stash their work etc. Once all the work is done, the branch can be merged into main and pushed up. Branches tend to be feature oriented. 
 
 Merging in feature branches
 
@@ -51,11 +54,16 @@ Branch Protection Rules: Have to be manually configured, important to have main 
 Prevents merging without PRs. 
 
 
-Fork and Clone Workflow: Different from previous examples. Instead of just one centralised GitHub repo, every developer has their own GitHub repo in addition to the "main" repo. Developers make changes and push to their own forks before making a pull request. It's very commonly used on large open-source projects where there may be thousands of contributors with only a couple maintainers. 
+Fork and Clone Workflow: Different from previous examples. 
+Instead of just one centralised GitHub repo, every developer has their own GitHub repo in addition to the "main" repo. 
+Developers make changes and push to their own forks before making a pull request. 
+It's very commonly used on large open-source projects where there may be thousands of contributors with only a couple maintainers. 
 
-Forking: GitHub and similar tools allow us to create personal copies of other peoples' repos on our Github account. We call those copies a "fork" of the original. 
+Forking: GitHub and similar tools allow us to create personal copies of other peoples' repos on our Github account. 
+We call those copies a "fork" of the original. 
 When we fork a repo, we're basically asking Github "Make me my own copy of this repo please"
-As with pull requests, forking is not a Git feature. The ability to fork is implemented by Github. 
+As with pull requests, forking is not a Git feature. 
+The ability to fork is implemented by Github. 
 You can then clone the repo to a local machine, work on it, push it back to my fork and not hit any restriction. 
 At that point you can then raise a pull request for the original repo
 
@@ -69,7 +77,8 @@ Summary of Steps:
 5. Push to origin (the fork repo)
 6. Open a pull request for the original project
 
-The Fork and clone workflow might seem complicated but it is extremely common for good reason. It allows a project maintainer to accept contributions from developers all around the world without having to ass them as actual owners of the main project repo or worry about giving them all permission to push to that repo. 
+The Fork and clone workflow might seem complicated but it is extremely common for good reason. 
+It allows a project maintainer to accept contributions from developers all around the world without having to ass them as actual owners of the main project repo or worry about giving them all permission to push to that repo. 
 
 The correct workflow will always be situational. 
 

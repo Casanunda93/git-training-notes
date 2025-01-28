@@ -1,34 +1,31 @@
 Branches - Think of them as alternative timelines of a project, go full TVA
 
 Master/Main branch - The official project, the working codebase
-
 HEAD - a pointer that refers to the current "location" in the repository. Points to a particular branch reference. 
 
-git branch (gives a list of existing branches, * indicates which branch you are currently on)
 
-git branch <Branch-name> (creates a new branch with a specific name stemming from the current HEAD. ITDOES NOT SWITCH TO THAT NEW BRANCH)
-        e.e git branch bugfix (creates a new branch called bugfix, do not use spaces in name)
-
-git switch <Branch-name> (moves to a branch that has already been created)
+git branch                                  (gives a list of existing branches, * indicates which branch you are currently on)
+git branch <Branch-name>                    (creates a new branch with a specific name stemming from the current HEAD. ITDOES NOT SWITCH TO THAT NEW BRANCH)
+                                             e.g git branch bugfix (creates a new branch called bugfix, do not use spaces in name)
+git switch <Branch-name>                    (moves to a branch that has already been created)
 
 ALTERNATIVE SWITCHING METHOD:
 
-git checkout <branch-name> (Historic method of switching, used for multiple purposes, can be seen in older tutorials, 
-
-git switch -c <branch-name> (Creates AND switches to a new named branch)
-
-git checkout -b <branch-name> (Historic method of Create AND switch to a new named branch)
+git checkout <branch-name>                  (Historic method of switching, used for multiple purposes, can be seen in older tutorials, 
+git switch -c <branch-name>                 (Creates AND switches to a new named branch)
+git checkout -b <branch-name>               (Historic method of Create AND switch to a new named branch)
 
 FOR NOW, ALWAYS ADD AND COMMIT CHANGES BEFORE SWITCHING BRANCHES, (OTHERWISE SEE STASHING)
 
-git branch -d or --delete <branch-name> (deletes the branch specified, will not delete it if you are on it)
+git branch -d or --delete <branch-name>     (deletes the branch specified, will not delete it if you are on it)
+git branch -m <new-name>                    (renames branch you are currently on)
+git merge <branch-name>                     (combining the changes of one branch back into the main branch, we merge branches NOT specific commits, we always merge to
+                                             the current HEAD branch i.e we merge to where we are)
+e.g Say we have a main branch and a bugfix branch. 
+We do work on the bugfix and are now ready to add these changes to the main branch
 
-git branch -m <new-name> (renames branch you are currently on)
-
-git merge <branch-name> (combining the changes of one branch back into the main branch, we merge branches NOT specific commits, we always merge to the current HEAD branch i.e we merge to where we are)
-            e.g Say we have a main branch and a bugfix branch. we do work on the bugfix and are now ready to add these changes to the main branch
-            git switch main (switches to the main branch)
-            git merge bugfix (merges the bugfix branch into the branch we are in i.e. main)
+git switch main                             (switches to the main branch)
+git merge bugfix                            (merges the bugfix branch into the branch we are in i.e. main)
 
 FOR CLARITY, GIT MERGE DOES NOT DELETE THE BRANCH YOU MERGE INTO MAIN, THEY ARE COMBINED BUT BOTH STILL EXIST SEPERATELY 
-git branch -v (shows all branches + info about the last commit on each branch)
+git branch -v                               (shows all branches + info about the last commit on each branch)

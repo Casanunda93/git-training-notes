@@ -1,21 +1,38 @@
-Atomic commits - When possible, a commit should encompass a single feature, change or fix. In other words, try to keep each commit focused on a single thing. This makes it easier to undo or rollback changes later on. It also makes your code or project easier to review. 
+Atomic commits - When possible, a commit should encompass a single feature, change or fix. 
+In other words, try to keep each commit focused on a single thing. 
+This makes it easier to undo or rollback changes later on. 
+It also makes your code or project easier to review. 
 
-Commit messages - Git docs reccomend that commit messages should be written in present tense "Change x to y". Make it sound like you're commanding the code. Not super necessary, depends on company requirements. just remain consistent. First line of a commit message should be a summary of all changes, then hit enter and add more detail if necessary
+
+Commit messages - Git docs reccomend that commit messages should be written in present tense "Change x to y". 
+Make it sound like you're commanding the code. 
+Not super necessary, depends on company requirements. 
+Just remain consistent. 
+First line of a commit message should be a summary of all changes, then hit enter and add more detail if necessary.
+
 
 .gitignore - This is a file we can create in the parent repository that can tell git to ignore certain other files, edit in text editor, use gitignore.io for starting points of ignore files depending on the project
 
-fast-forward merge - This is the term given when git merge is used to merge changes from a side branch into the main branch, when there have been no extra commits on the main branch i.e fastforwarding the main branch to where the side branch currently is. this is the simplest merge. 
+
+fast-forward merge - This is the term given when git merge is used to merge changes from a side branch into the main branch, when there have been no extra commits on the main branch i.e fastforwarding the main branch to where the side branch currently is. 
+This is the simplest merge. 
 
 e.g (Main branch) Git init -> commit 1 -> commit 2 -> commit 3
                                                               \                      
                                                                \                    
                                             (Bugfix branch)     Commit 4 -> commit 5
 
+
 By merging the Bugfix branch back into main, we then create a straight line, no clashing commits, main is "fast-forwarded" to the same point that Bugfix was at:
+
 
 (Main branch) Git init -> commit 1 -> commit 2 -> commit 3 -> Commit 4 -> commit 5
 
+
 For merges where there are more commits after the branch point on the main branch, git will create a commit upon merging and open a text editor for a commit message. 
+
+
+
 
 MERGE CONFLICTS
 

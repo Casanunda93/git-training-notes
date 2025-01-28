@@ -1,18 +1,21 @@
-None of this is particularly necessary to know but these are some attributes of the .git folder (the hidden folder of any repo)
-
+***None of this is particularly necessary to know but these are some attributes of the .git folder (the hidden folder of any repo)***
 
 
 The local config file
 
-The config file is for configuration (duh). We've seen how to configure global settings like our name and email across all Git repos, but we can also configure things on a per-repo basis. 
+The config file is for configuration (duh). 
+We've seen how to configure global settings like our name and email across all Git repos, but we can also configure things on a per-repo basis. 
 
-git config --local      (We can make changes to this file via command line as we have done before or we can open this file and make changes directly to it.) 
+git config --local              (We can make changes to this file via command line as we have done before or we can open this file and make changes directly to it.) 
 
 
 
 The refs directory (references)
 
-Inside refs, you'll find a heads directory. refs/heads contains one file per branch in a repo. Each file is named after a branch and contains the has of the commit at the tip of the branch e.g. refs/heads/master contains the commit hash of the last commit on the master branch. Refs also contains a refs/tags folder which contains one file for each tag in the repo. 
+Inside refs, you'll find a heads directory. refs/heads contains one file per branch in a repo. 
+Each file is named after a branch and contains the has of the commit at the tip of the branch 
+e.g. refs/heads/master contains the commit hash of the last commit on the master branch. 
+Refs also contains a refs/tags folder which contains one file for each tag in the repo. 
 
 
 
@@ -29,10 +32,10 @@ The objects directory contains all the repo files.
 This is where Git stores the backups of files, the commits in a repo and more. 
 The files are all compressed and encrypted, so they won't look like much. 
 There are 4 types of objects you can find in the directory:
--commit
--tree
--blob
--annotated tag
+    -commit
+    -tree
+    -blob
+    -annotated tag
 
 
 Let's talk Hashing
@@ -41,10 +44,10 @@ Hashing Functions are a family of functions that map input data of some arbitrar
 Example: Each commit hash for example is 40 digits long based on base 16 Hexadecimal. 
 
 Specifically, Cryptographic Hash Functions:
-1) One-way function which is infeasible to invert (shouldn't tell you anything about the input)
-2) Small change in input yields large change in the output (again, stops inference of input)
-3) Deterministic - Same input yields same output (consistant)
-4) Unlikely to find 2 outputs with the same value
+    1) One-way function which is infeasible to invert (shouldn't tell you anything about the input)
+    2) Small change in input yields large change in the output (again, stops inference of input)
+    3) Deterministic - Same input yields same output (consistant)
+    4) Unlikely to find 2 outputs with the same value
 
 How is this relevant to git?
 
@@ -64,20 +67,20 @@ Hashing with Git Hash-Object
 
 The command git hash-object takes some data, stores in our .git/objects directory and gives us back a unique SHA-1 hash that refers to that data object. 
 
-git hash-object <file>      (In the simplest form, Git simply takes some content and returns the unique ket that WOULD be used to store our object. But it doesn't
-                             actually store anything.) 
+git hash-object <file>                          (In the simplest form, Git simply takes some content and returns the unique ket that WOULD be used to store our object. 
+                                                 But it doesn't actually store anything.) 
 
-echo 'hello' | git hash-object --stdin        (The --stdin option tells git hash-object to use the content from standard input rather than a file. In our example it will
-                                                hash the word 'hello'. The echo command simply repeats whatever we tell it to repeat to the terminal. We pipe ( | ) the
-                                                output of echo to git hash-object, this command does not store the ooutput anywhere)
+echo 'hello' | git hash-object --stdin          (The --stdin option tells git hash-object to use the content from standard input rather than a file. In our example it 
+                                                 will hash the word 'hello'. The echo command simply repeats whatever we tell it to repeat to the terminal. We pipe ( | )
+                                                 the output of echo to git hash-object, this command does not store the ooutput anywhere)
 
-echo 'hello' | git hash-object --stdin -w     (Rather than simply outputting the key that git would store our object under, we can use -w to tell git to actually write
-                                                the object to the database. After running this command the key should be written to the .git/objects directory, the first
-                                                2 characters of the 40 hex code will be the name of the newly made directory, the file name will be the other 38
-                                                characters)
+echo 'hello' | git hash-object --stdin -w       (Rather than simply outputting the key that git would store our object under, we can use -w to tell git to actually write
+                                                 the object to the database. After running this command the key should be written to the .git/objects directory, the 
+                                                 first 2 characters of the 40 hex code will be the name of the newly made directory, the file name will be the other 38 
+                                                 characters)
 
-git cat-file -p <object-hash>        (retrieving the data stored in out git object database, the -p tells git to pretty print the contents of the object based on its
-                                        type)
+git cat-file -p <object-hash>                   (retrieving the data stored in out git object database, the -p tells git to pretty print the contents of the object based
+                                                 on its type)
 
 
 
@@ -96,10 +99,10 @@ Each tree contains pointers that can refer to blobs and to other trees.
 Each entry in a tree contains the SHA-1 hash of a blob or tree, as well as the mode, type and filename
 Each tree gets its own hash
 
-git cat-file -p main^{tree}       (remember that git cat-file prints out git objects. in this example, the main^{tree} syntax specifies the tree object that is
-                                        pointed to by the tip of our main branch)
+git cat-file -p main^{tree}                     (remember that git cat-file prints out git objects. in this example, the main^{tree} syntax specifies the tree object
+                                                 that is pointed to by the tip of our main branch)
 
-git cat-file -t <object-hash>     (tells you the kind of object associated with a particular hash i.e. blobs, trees etc)
+git cat-file -t <object-hash>                   (tells you the kind of object associated with a particular hash i.e. blobs, trees etc)
 
 
 Deep Dive: Commits

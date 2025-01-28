@@ -1,6 +1,7 @@
-git diff is used to view changes between commits, branches, files, working directory and more. Often used alongside commands like git status and git log to get a better pictures of a repo and how it has changed over time)
+git diff is used to view changes between commits, branches, files, working directory and more. 
+Often used alongside commands like git status and git log to get a better pictures of a repo and how it has changed over time
 
-git diff (without additional options, git diff lists all changes in our working directory that are NOT staged for the next commit)
+git diff                    (without additional options, git diff lists all changes in our working directory that are NOT staged for the next commit)
 
 Reading outputs:
 We make a file called rainbow.txt
@@ -43,18 +44,20 @@ blue                                                        number 5) have been 
 
 Using Git Diff in different ways
 
-git diff HEAD   (lists all changes in the working directory tree since your last commit i.e. Since HEAD)
-
-git diff --staged or git diff --cached (shows the changes between the staging area and our last commit "Show me what will be included if I commit right now")
+git diff HEAD                                       (lists all changes in the working directory tree since your last commit i.e. Since HEAD)
+git diff --staged or git diff --cached              (shows the changes between the staging area and our last commit "Show me what will be included if I commit right
+                                                     now")
 
 We can also Diff specific files:
 
-git diff HEAD "File name"  (lists all changes in the working directory tree since your last commit i.e. Since HEAD specifically in the specified file)
-git diff --staged "File Name" (shows the changes between the staging area and our last commit specifically in the specified file)
+git diff HEAD "File name"                           (lists all changes in the working directory tree since your last commit i.e. Since HEAD specifically in the specified
+                                                     file)
+git diff --staged "File Name"                       (shows the changes between the staging area and our last commit specifically in the specified file)
 
 We can also compare against different branches
-git diff branch1..branch2   (will list the changes between the tips of branch1 and branch2)
+git diff branch1..branch2                           (will list the changes between the tips of branch1 and branch2)
 
 We can also compare against specific commits
-git diff commit1..commit2  (will list the changes between two commits, have to provide git diff with the commit hashes, use git log --oneline to get the hashes)
+git diff commit1..commit2                           (will list the changes between two commits, have to provide git diff with the commit hashes, use git log --oneline to
+                                                     get the hashes)
 

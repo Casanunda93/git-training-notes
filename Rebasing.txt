@@ -26,7 +26,8 @@ Essentially the most recent work on main is smooshed to the starting point of th
 Both branches still exist, the feature branch will just be ahead of the master branch at this point
 
 So making sure you're on the feature branch (git switch feature):
-git rebase master           (rewrites the branch you are on so that the commits of master occur at the start of the commit chain for this branch)
+
+git rebase master                       (rewrites the branch you are on so that the commits of master occur at the start of the commit chain for this branch)
 
 This will cleanup the commit history significantly (no more merge commits)
 
@@ -65,6 +66,7 @@ At this point you have 2 options:
 *Personally, I would prefer to merge for the majority, resolving conflicts as needed, then end on a rebase to tidy up.*
 
 
+
 Interactive Rebase: Cleaning Up History
 
 Sometimes we want to rewrite, delete, rename or even reorder commits (before sharing them). 
@@ -91,15 +93,4 @@ It will open our text editor showing the commits you chose to edit with the foll
 Choose the relevant command, save and close the text editor
 A new text editor window will open if you selected an option requiring it, again make changes, save, close
 Rebase will finish with changes in place. 
-
-
-*Note: Once I am finished making these notes I can get around the BIG rebasing issue by doing the following
--Make a new local branch
--Rebase, make necessary commit changes
--Push to GitHub
--Make the new branch the default
--rename the new branch as main, old branch as main 2
--delete old main branch 
-
-I AM ONLY ABLE TO DO THIS BECAUSE I HAVE CONTROL OF BOTH LOCAL AND REMOTE REPOS
 

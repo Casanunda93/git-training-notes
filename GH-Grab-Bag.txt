@@ -1,13 +1,16 @@
 Public Vs Private Repos
 
 Option given when you create a repo on Github. 
-Public repos are accessible to everyone on the internet. anyone can see the repo on github. You still need permission too push. 
+Public repos are accessible to everyone on the internet. 
+Anyone can see the repo on github. 
+You still need permission too push. 
 Private repos are only accessible to the owner and people who have been granted access. 
 
 Only the owner can toggle the visibillity in the DANGER ZONE. 
 
 Adding Collaborators
-Can be manually invited on Github. Permission required on both ends. 
+Can be manually invited on Github. 
+Permission required on both ends. 
 Only owner can remove collaborators. 
 Collaborators are able to clone and push changes, but is still unable to view settings. 
 
@@ -16,15 +19,16 @@ Collaborators are able to clone and push changes, but is still unable to view se
 READMEs
 When you initialise a a repo on Github you have the option to create a readme.
 A README file is used to communicate important information about a repo including:
--What the project does
--How to run the project
--Why it's noteworthy
--Who maintains the project
+    -What the project does
+    -How to run the project
+    -Why it's noteworthy
+    -Who maintains the project
 
 If you put a README in the root of your project, Github will recognize it and automatically display it on the repo's home page. 
 READMEs are Markdown files, ending with the .md extension. Markdown is a convenient syntax to generate formatted text. 
 GitHub is able to render Markdown files as HTML based on the simple syntax. 
 For more information on how to use Markdown:
+
 https://markdown-it.github.io/
 https://daringfireball.net/projects/markdown/
 
@@ -32,20 +36,28 @@ You could make a README locally and push it to the repo or on GitHub if you have
 
 
 Github Gists
-Gists are a simple way to share code snippets and useful fragments with others. Gists are much easier to create, 
-but offer far fewer features than a typical Github repo.
+Gists are a simple way to share code snippets and useful fragments with others. 
+Gists are much easier to create, but offer far fewer features than a typical Github repo.
 A lot of gists are also markdown files. 
 Can be made public or private. 
 Created using the add dropdown on Github. 
 
 
 GitHub Pages
-Github pages are public webpages that are hosted and published via Github. They allow you to create a website simply by pushing your code to Github.
-This is not a full fledged website. Can only host static webpages, so it does not support server-side code like Python, Ruby or Node. 
-Just HTML/CSS/JS but It's free and built in. Good for protfolios.
+Github pages are public webpages that are hosted and published via Github. 
+They allow you to create a website simply by pushing your code to Github.
+This is not a full fledged website. 
+Can only host static webpages, so it does not support server-side code like Python, Ruby or Node. 
+Just HTML/CSS/JS but It's free and built in. 
+Good for protfolios.
+
 2 kinds of site: User Site and Project sites
-User Sites: You get one user site per Github account. This is where you could host a portfolio site or some form of personal website. The default url is based on your Github username, following the patter "username.github.io" (though this is changeable)
-Project Sites: You get unlimited project sites! Each Github repo can have a corresponding hosted wedbsite. It's as simple as telling github which specific branch contains the web content. The default urls follow this pattern - username.github.io/repo-name
+User Sites: You get one user site per Github account. 
+This is where you could host a portfolio site or some form of personal website. 
+The default url is based on your Github username, following the patter "username.github.io" (though this is changeable)
+Project Sites: You get unlimited project sites! Each Github repo can have a corresponding hosted wedbsite. 
+It's as simple as telling github which specific branch contains the web content. 
+The default urls follow this pattern - username.github.io/repo-name
 
 Example
     -make a "gh-pages" branch
@@ -53,7 +65,8 @@ Example
     -Settings > Github pages
     -Select branch
 
-You can push any website changes to the branch. Will require HTML knowledge. 
+You can push any website changes to the branch. 
+Will require HTML knowledge. 
 
 
 

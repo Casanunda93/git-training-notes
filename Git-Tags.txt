@@ -40,8 +40,7 @@ Features may be removed or changed substantially: v2.0.0
 
 Viewing tags
 
-git tag      (will list all tags in the current repo)
-
+git tag                (will list all tags in the current repo)
 git tag -l "*beta*"    (we can search for tags that match a particular pattern by using git tag -l and then passing a wildcard pattern e.g. "*beta*" will print a list
                         of tags that include "beta" in the name - the * just means some characters before and after the word beta)
 
@@ -63,13 +62,11 @@ There are two types of Git tags we can use: lightweight and annotated.
 Lightweight tags are just a name/label that points to a particular commit. (frowned upon)
 Annotated tags store extra meta data including the author's name and email, the date and a tagging message (like a commit message)
 
-git tag <tagename>       (creates a new lightweight tag, by default git will create the tag referring to the commit that HEAD is referencing) 
-
-git tag -a <tagname>     (creates a new annotated tag. Git will then open your default text editor and prompt you for additional info. We can also use the -m option 
+git tag <tagename>         (creates a new lightweight tag, by default git will create the tag referring to the commit that HEAD is referencing) 
+git tag -a <tagname>       (creates a new annotated tag. Git will then open your default text editor and prompt you for additional info. We can also use the -m option 
                             to pass a message directly and forgo the opening of the text editor, by default git will create the tag referring to the commit that HEAD is
                             referencing)
-
-git show <tagname>       (Used to view the meta data of an annotated tag)
+git show <tagname>         (Used to view the meta data of an annotated tag)
 
 
 
@@ -83,13 +80,14 @@ Forcing Tags
 
 If you try and reuse a tag that is already associated with a commit, Git will get sad and throw a wobbler. 
 
-git tag -f <tagname>         (Forces our tag through, essentially moves the tag from the old commit it was pointing at to the new one, in this case default HEAD)
+git tag -f <tagname>                      (Forces our tag through, essentially moves the tag from the old commit it was pointing at to the new one, in this case default
+                                           HEAD)
 
 
 
 Deleting tags
 
-git tag -d <tagname>      (deletes the specified tag, just the tag not the commit)
+git tag -d <tagname>                      (deletes the specified tag, just the tag not the commit)
 
 
 
@@ -101,6 +99,6 @@ i.e. git push --tags
 
 or if you have individual tags you want to push:
 
-git push origin <tagname>        (pushes the specified tag to the remote origin)
+git push origin <tagname>                 (pushes the specified tag to the remote origin)
 
 
