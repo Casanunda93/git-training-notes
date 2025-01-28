@@ -28,5 +28,31 @@ The objects directory
 The objects directory contains all the repo files.
 This is where Git stores the backups of files, the commits in a repo and more. 
 The files are all compressed and encrypted, so they won't look like much. 
+There are 4 types of objects you can find in the directory:
+-commit
+-tree
+-blob
+-annotated tag
+
+
+Let's talk Hashing
+
+Hashing Functions are a family of functions that map input data of some arbitrary size (any size) to fixed-size output values (consistant size)
+Example: Each commit hash for example is 40 digits long based on base 16 Hexadecimal. 
+
+Specifically, Cryptographic Hash Functions:
+1) One-way function which is infeasible to invert (shouldn't tell you anything about the input)
+2) Small change in input yields large change in the output (again, stops inference of input)
+3) Deterministic - Same input yields same output (consistant)
+4) Unlikely to find 2 outputs with the same value
+
+How is this relevant to git?
+
+Git uses a hashing function called SHA-1 (though this is set to change eventually)
+- SHA-1 always generates 40-digit hexadecimal numbers
+- The commit hashes we've seen are the output of SHA-1
+
+
+
 
 
